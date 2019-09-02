@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Sep 2019 pada 18.42
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.2.12
+-- Waktu pembuatan: 02 Sep 2019 pada 19.48
+-- Versi server: 10.4.6-MariaDB
+-- Versi PHP: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,49 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_impal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(5) NOT NULL,
+  `nama_admin` varchar(250) NOT NULL,
+  `email_adm` varchar(250) NOT NULL,
+  `no_laporan_FK` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_adm`, `no_laporan_FK`) VALUES
+(12001, 'Tari', 'tariaya@gmail.com', 11003),
+(12002, 'Raka', 'akara9@gmail.com', 11001),
+(12003, 'Bambang', 'bambang12@gmail.com', 11002);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `customer`
+--
+
+CREATE TABLE `customer` (
+  `id_customer` int(5) NOT NULL,
+  `nama_customer` varchar(250) NOT NULL,
+  `email_cust` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `customer`
+--
+
+INSERT INTO `customer` (`id_customer`, `nama_customer`, `email_cust`) VALUES
+(10001, 'Andi', 'andi4mi@gmail.com'),
+(10002, 'Joko', 'jokoukch@ymail.com'),
+(10003, 'Rani', 'raerani@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -69,6 +112,19 @@ INSERT INTO `manajer` (`id_manajer`, `nama_mnj`, `email_mnj`) VALUES
 --
 
 --
+-- Indeks untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`),
+  ADD KEY `no_laporan_FK` (`no_laporan_FK`);
+
+--
+-- Indeks untuk tabel `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id_customer`);
+
+--
 -- Indeks untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
@@ -86,6 +142,18 @@ ALTER TABLE `manajer`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12004;
+
+--
+-- AUTO_INCREMENT untuk tabel `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id_customer` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10004;
+
+--
 -- AUTO_INCREMENT untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
@@ -100,6 +168,12 @@ ALTER TABLE `manajer`
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
+
+--
+-- Ketidakleluasaan untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`no_laporan_FK`) REFERENCES `laporan` (`no_laporan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `laporan`
