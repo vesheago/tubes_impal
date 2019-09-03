@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Sep 2019 pada 03.21
--- Versi Server: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Waktu pembuatan: 03 Sep 2019 pada 05.20
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,20 +29,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id_admin` int(5) NOT NULL,
+  `id_admin` char(5) NOT NULL,
   `nama_admin` varchar(250) NOT NULL,
-  `email_adm` varchar(250) NOT NULL,
-  `no_laporan_FK` int(5) NOT NULL
+  `email_admin` varchar(250) NOT NULL,
+  `no_laporan_FK` char(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_adm`, `no_laporan_FK`) VALUES
-(12001, 'Tari', 'tariaya@gmail.com', 11003),
-(12002, 'Raka', 'akara9@gmail.com', 11001),
-(12003, 'Bambang', 'bambang12@gmail.com', 11002);
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `no_laporan_FK`) VALUES
+('AD001', 'Tari', 'tariaya@gmail.com', 'LA001'),
+('AD002', 'Raka', 'akara9@gmail.com', 'LA002'),
+('AD003', 'Bambang', 'bambang12@gmail.com', 'LA003');
 
 -- --------------------------------------------------------
 
@@ -51,19 +51,19 @@ INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_adm`, `no_laporan_FK`) VAL
 --
 
 CREATE TABLE `customer` (
-  `id_customer` int(5) NOT NULL,
+  `id_customer` char(5) NOT NULL,
   `nama_customer` varchar(250) NOT NULL,
-  `email_cust` varchar(250) NOT NULL
+  `email_customer` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `customer`
 --
 
-INSERT INTO `customer` (`id_customer`, `nama_customer`, `email_cust`) VALUES
-(10001, 'Andi', 'andi4mi@gmail.com'),
-(10002, 'Joko', 'jokoukch@ymail.com'),
-(10003, 'Rani', 'raerani@gmail.com');
+INSERT INTO `customer` (`id_customer`, `nama_customer`, `email_customer`) VALUES
+('CU001', 'Andi', 'andi4me@gmail.com'),
+('CU002', 'Joko', 'jokoukch@gmail.com'),
+('CU003', 'Rani', 'raerani@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -72,21 +72,22 @@ INSERT INTO `customer` (`id_customer`, `nama_customer`, `email_cust`) VALUES
 --
 
 CREATE TABLE `keluhan` (
-  `No_polisi` varchar(8) NOT NULL,
-  `Keluhan` varchar(100) NOT NULL,
-  `Keterangan` varchar(100) NOT NULL,
-  `Jam` varchar(5) NOT NULL,
-  `Tanggal` varchar(15) NOT NULL
+  `no_polisi` varchar(20) NOT NULL,
+  `jenis_keluhan` varchar(250) NOT NULL,
+  `keterangan` varchar(250) NOT NULL,
+  `tanggal` varchar(100) NOT NULL,
+  `jam` varchar(100) NOT NULL,
+  `id_customer_FK` char(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `keluhan`
 --
 
-INSERT INTO `keluhan` (`No_polisi`, `Keluhan`, `Keterangan`, `Jam`, `Tanggal`) VALUES
-('D137AA', 'Masalah mesin', 'sering mogok', '1014', '19 Juli 2019'),
-('AD011D', 'Service AC', 'tidak berfungsi', '8:05', '24 Agustus 2019'),
-('E111A', 'Pengecekan masalah', 'saat jalan bagian bawah bunyi', '13:10', '10 Oktober 2019');
+INSERT INTO `keluhan` (`no_polisi`, `jenis_keluhan`, `keterangan`, `tanggal`, `jam`, `id_customer_FK`) VALUES
+('AD011D', 'Pengecekan masalah', 'Saat jalan, bagian bawah mobil bunyi', '10 Oktober 2019', '13:10', 'CU001'),
+('D1747AFR', 'Masalah mesin', 'Sering mogok', '19 Juli 2019', '10:14', 'CU002'),
+('DS1634AA', 'Service AC', 'AC tidak dingin', '2 Agustus 2019', '8:05', 'CU003');
 
 -- --------------------------------------------------------
 
@@ -95,9 +96,9 @@ INSERT INTO `keluhan` (`No_polisi`, `Keluhan`, `Keterangan`, `Jam`, `Tanggal`) V
 --
 
 CREATE TABLE `laporan` (
-  `no_laporan` int(5) NOT NULL,
-  `tgl_laporan` varchar(30) NOT NULL,
-  `id_manajer_FK` int(5) NOT NULL
+  `no_laporan` char(5) NOT NULL,
+  `tgl_laporan` varchar(100) NOT NULL,
+  `id_manajer_FK` char(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -105,9 +106,9 @@ CREATE TABLE `laporan` (
 --
 
 INSERT INTO `laporan` (`no_laporan`, `tgl_laporan`, `id_manajer_FK`) VALUES
-(11001, '24 Juli 2019', 13002),
-(11002, '16 Agustus 2019', 13001),
-(11003, '2 September 2019', 13003);
+('LA001', '22 Juli 2019', 'MJ002'),
+('LA002', '27 Agustus 2019', 'MJ003'),
+('LA003', '15 Oktober 2019', 'MJ001');
 
 -- --------------------------------------------------------
 
@@ -116,19 +117,19 @@ INSERT INTO `laporan` (`no_laporan`, `tgl_laporan`, `id_manajer_FK`) VALUES
 --
 
 CREATE TABLE `manajer` (
-  `id_manajer` int(5) NOT NULL,
-  `nama_mnj` varchar(250) NOT NULL,
-  `email_mnj` varchar(250) NOT NULL
+  `id_manajer` char(5) NOT NULL,
+  `nama_manajer` varchar(250) NOT NULL,
+  `email_manajer` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `manajer`
 --
 
-INSERT INTO `manajer` (`id_manajer`, `nama_mnj`, `email_mnj`) VALUES
-(13001, 'Rio', 'rio99@gmail.com'),
-(13002, 'Azra', 'aaazra@gmail.com'),
-(13003, 'Nisa', 'anisa@gmail.com');
+INSERT INTO `manajer` (`id_manajer`, `nama_manajer`, `email_manajer`) VALUES
+('MJ001', 'Rio', 'rio99@gmail.com'),
+('MJ002', 'Azra', 'aaazra@gmail.com'),
+('MJ003', 'Nisa', 'anisa@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -137,109 +138,69 @@ INSERT INTO `manajer` (`id_manajer`, `nama_mnj`, `email_mnj`) VALUES
 --
 
 CREATE TABLE `tagihan` (
-  `id_tagihan` varchar(4) NOT NULL,
-  `tanggal` date NOT NULL,
-  `jam` time NOT NULL,
-  `no_antrean` varchar(3) NOT NULL,
-  `nopol` varchar(8) NOT NULL,
-  `status` varchar(15) NOT NULL,
-  `total` int(10) NOT NULL,
-  `id_admin` varchar(4) NOT NULL
+  `id_tagihan` char(5) NOT NULL,
+  `tgl_tagihan` varchar(100) NOT NULL,
+  `jam_tagihan` varchar(100) NOT NULL,
+  `no_antrean` char(4) NOT NULL,
+  `status` varchar(250) NOT NULL,
+  `total` int(250) NOT NULL,
+  `no_polisi_FK` varchar(20) NOT NULL,
+  `id_admin_FK` char(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tagihan`
 --
 
-INSERT INTO `tagihan` (`id_tagihan`, `tanggal`, `jam`, `no_antrean`, `nopol`, `status`, `total`, `id_admin`) VALUES
-('B010', '2019-07-19', '13:10:00', 'X01', 'D137AA', 'Belum Lunas', 300000, 'A002'),
-('B011', '2019-08-24', '08:05:00', 'X02', 'AD011D', 'Belum Lunas', 110000, 'A001'),
-('B012', '2019-10-10', '10:14:00', 'X03', 'E111A', 'Lunas', 90000, 'A003');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tugas`
---
-
-CREATE TABLE `tugas` (
-  `id_tugas` char(5) NOT NULL,
-  `No_polisi` varchar(8) NOT NULL,
-  `id_tagihan` char(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tugas`
---
-
-INSERT INTO `tugas` (`id_tugas`, `No_polisi`, `id_tagihan`) VALUES
-('AX001', 'D137AA', 'B010'),
-('AX002', 'AD011D', 'B011'),
-('AX003', 'E111A', 'B012');
+INSERT INTO `tagihan` (`id_tagihan`, `tgl_tagihan`, `jam_tagihan`, `no_antrean`, `status`, `total`, `no_polisi_FK`, `id_admin_FK`) VALUES
+('TA001', '19 Juli 2019', '13:10', 'A001', 'Belum Lunas', 300000, 'D1747AFR', 'AD002'),
+('TA002', '24 Agustus 2019', '08:05', 'A002', 'Belum Lunas', 110000, 'AD011D', 'AD001'),
+('TA003', '19 Juli 2019', '13:10', 'A003', 'Lunas', 90000, 'DS1634AA', 'AD003');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`),
   ADD KEY `no_laporan_FK` (`no_laporan_FK`);
 
 --
--- Indexes for table `customer`
+-- Indeks untuk tabel `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id_customer`);
 
 --
--- Indexes for table `laporan`
+-- Indeks untuk tabel `keluhan`
+--
+ALTER TABLE `keluhan`
+  ADD PRIMARY KEY (`no_polisi`),
+  ADD KEY `id_customer_FK` (`id_customer_FK`);
+
+--
+-- Indeks untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
   ADD PRIMARY KEY (`no_laporan`),
   ADD KEY `id_manajer_FK` (`id_manajer_FK`);
 
 --
--- Indexes for table `manajer`
+-- Indeks untuk tabel `manajer`
 --
 ALTER TABLE `manajer`
   ADD PRIMARY KEY (`id_manajer`);
 
 --
--- Indexes for table `tagihan`
+-- Indeks untuk tabel `tagihan`
 --
 ALTER TABLE `tagihan`
-  ADD PRIMARY KEY (`id_tagihan`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12004;
-
---
--- AUTO_INCREMENT for table `customer`
---
-ALTER TABLE `customer`
-  MODIFY `id_customer` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10004;
-
---
--- AUTO_INCREMENT for table `laporan`
---
-ALTER TABLE `laporan`
-  MODIFY `no_laporan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12348;
-
---
--- AUTO_INCREMENT for table `manajer`
---
-ALTER TABLE `manajer`
-  MODIFY `id_manajer` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13004;
+  ADD PRIMARY KEY (`id_tagihan`),
+  ADD KEY `id_admin_FK` (`id_admin_FK`),
+  ADD KEY `no_polisi_FK` (`no_polisi_FK`);
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -252,10 +213,23 @@ ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`no_laporan_FK`) REFERENCES `laporan` (`no_laporan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Ketidakleluasaan untuk tabel `keluhan`
+--
+ALTER TABLE `keluhan`
+  ADD CONSTRAINT `keluhan_ibfk_1` FOREIGN KEY (`id_customer_FK`) REFERENCES `customer` (`id_customer`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Ketidakleluasaan untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
   ADD CONSTRAINT `laporan_ibfk_1` FOREIGN KEY (`id_manajer_FK`) REFERENCES `manajer` (`id_manajer`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `tagihan`
+--
+ALTER TABLE `tagihan`
+  ADD CONSTRAINT `tagihan_ibfk_1` FOREIGN KEY (`id_admin_FK`) REFERENCES `admin` (`id_admin`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tagihan_ibfk_2` FOREIGN KEY (`no_polisi_FK`) REFERENCES `keluhan` (`no_polisi`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
