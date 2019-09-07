@@ -21,6 +21,19 @@ class M_admin extends CI_Model {
 		return $hasil;
 	}
 
+	public function GetLaporan(){
+		$this->db->select('no_laporan','tgl_laporan');
+		$this->db->from('laporan');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function show_laporan(){
+		$tampil=$this->db->query("SELECT no_laporan, tgl_laporan FROM laporan JOIN manajer
+		WHERE laporan.id_manajer_FK=manajer.id_manajer");
+		return $tampil;
+	}
+
 	// public function GetTagihan(){
 	// 	$this->db->select('id_tagihan','tgl_tagihan','jam_tagihan','total','status');
 	// 	$this->db->from('tagihan');

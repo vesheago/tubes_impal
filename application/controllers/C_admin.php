@@ -18,10 +18,21 @@ class C_admin extends CI_Controller {
 		"kampus"=>"Bengkelku"
 	);
 
+	public $data_manager = array(
+		"id" => "67890",
+		"nama" => "Manager"
+	);
+
 	public function tagihan(){
 		$x['data']=$this->M_admin->show_tagihan_cust();
 		$this->load->view('page_header');
 		$this->load->view('page_tagihan',$x);
+	}
+
+	public function laporan(){
+		$a['data']=$this->M_admin->show_laporan();
+		$this->load->view('page_header_manager');
+		$this->load->view('page_laporan',$a);
 	}
 
 }
