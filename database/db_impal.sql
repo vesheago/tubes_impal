@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Sep 2019 pada 05.20
+-- Waktu pembuatan: 09 Sep 2019 pada 09.44
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.2.12
 
@@ -32,17 +32,18 @@ CREATE TABLE `admin` (
   `id_admin` char(5) NOT NULL,
   `nama_admin` varchar(250) NOT NULL,
   `email_admin` varchar(250) NOT NULL,
-  `no_laporan_FK` char(5) NOT NULL
+  `no_laporan_FK` char(5) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `no_laporan_FK`) VALUES
-('AD001', 'Tari', 'tariaya@gmail.com', 'LA001'),
-('AD002', 'Raka', 'akara9@gmail.com', 'LA002'),
-('AD003', 'Bambang', 'bambang12@gmail.com', 'LA003');
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `no_laporan_FK`, `password`) VALUES
+('AD001', 'Tari', 'tariaya@gmail.com', 'LA001', '123'),
+('AD002', 'Raka', 'akara9@gmail.com', 'LA002', ''),
+('AD003', 'Bambang', 'bambang12@gmail.com', 'LA003', '');
 
 -- --------------------------------------------------------
 
@@ -53,17 +54,18 @@ INSERT INTO `admin` (`id_admin`, `nama_admin`, `email_admin`, `no_laporan_FK`) V
 CREATE TABLE `customer` (
   `id_customer` char(5) NOT NULL,
   `nama_customer` varchar(250) NOT NULL,
-  `email_customer` varchar(250) NOT NULL
+  `email_customer` varchar(250) NOT NULL,
+  `password` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `customer`
 --
 
-INSERT INTO `customer` (`id_customer`, `nama_customer`, `email_customer`) VALUES
-('CU001', 'Andi', 'andi4me@gmail.com'),
-('CU002', 'Joko', 'jokoukch@gmail.com'),
-('CU003', 'Rani', 'raerani@gmail.com');
+INSERT INTO `customer` (`id_customer`, `nama_customer`, `email_customer`, `password`) VALUES
+('CU001', 'Andi', 'andi4me@gmail.com', '12345'),
+('CU002', 'Joko', 'jokoukch@gmail.com', ''),
+('CU003', 'Rani', 'raerani@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -87,7 +89,8 @@ CREATE TABLE `keluhan` (
 INSERT INTO `keluhan` (`no_polisi`, `jenis_keluhan`, `keterangan`, `tanggal`, `jam`, `id_customer_FK`) VALUES
 ('AD011D', 'Pengecekan masalah', 'Saat jalan, bagian bawah mobil bunyi', '10 Oktober 2019', '13:10', 'CU001'),
 ('D1747AFR', 'Masalah mesin', 'Sering mogok', '19 Juli 2019', '10:14', 'CU002'),
-('DS1634AA', 'Service AC', 'AC tidak dingin', '2 Agustus 2019', '8:05', 'CU003');
+('DS1634AA', 'Service AC', 'AC tidak dingin', '2 Agustus 2019', '8:05', 'CU003'),
+('PA1235AV', 'Masalah rem', 'Rem tidak bisa', '4 September 2019', '09:45', 'CU003');
 
 -- --------------------------------------------------------
 

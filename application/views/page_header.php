@@ -55,8 +55,9 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Akun
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#"><?php echo $this->data['id'] ?></a></li>
-          <li><a href="#"><?php echo $this->data['nama'] ?></a></li>
+          <li><a href="#"><?php echo $this->session->userdata('ses_id'); ?></a></li>
+          <li><a href="#"><?php echo $this->session->userdata('ses_nama'); ?></a></li>
+          <li><a href="<?php echo base_url().'index.php/C_login/logout'?>">Sign Out</a></li>
         </ul>
       </li>
     </ul>
