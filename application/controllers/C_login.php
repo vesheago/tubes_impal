@@ -16,7 +16,7 @@ class C_login extends CI_Controller{
         $cek_admin=$this->M_login->auth_admin($username,$password);
 				if($cek_admin->num_rows() > 0){
 					$data=$cek_admin->row_array();
-        	$this->session->set_userdata('masuk',TRUE);
+        			$this->session->set_userdata('masuk',TRUE);
 					$this->session->set_userdata('ses_id',$data['id']);
 					$this->session->set_userdata('ses_nama',$data['nama']);
 					redirect('index.php/C_admin');
