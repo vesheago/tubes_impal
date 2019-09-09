@@ -5,8 +5,6 @@
 	<title>Tagihan</title>
   <br>
   <br>
-	<!-- <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet"> -->
-    <!-- <link href="<?php echo base_url().'assets/css/jquery.dataTables.min.css'?>" rel="stylesheet"> -->
 </head>
 <body>
 
@@ -17,9 +15,12 @@
       <thead>
         <tr>
           <td>ID Tagihan</td>
-          <td>Tanggal</td>
-          <td>Jam</td>
-          <td>Total</td>
+          <td>Tanggal Tagihan</td>
+          <td>Jam Tagihan</td>
+          <td>No Antrean</td>
+          <td>No Polisi</td>
+          <td>Rincian</td>
+          <td>Total Harga</td>
           <td>Status</td>
         </tr>
       </thead>
@@ -29,14 +30,20 @@
             $id_tagihan=$i['id_tagihan'];
             $tgl_tagihan=$i['tgl_tagihan'];
             $jam_tagihan=$i['jam_tagihan'];
-            $total=$i['total'];
+            $no_antrean=$i['no_antrean'];
+            $no_polisi=$i['no_polisi'];
+            $rincian=$i['rincian'];
+            $total_harga=$i['total_harga'];
             $status=$i['status'];
         ?>
         <tr>
           <td><?php echo $id_tagihan;?></td>
           <td><?php echo $tgl_tagihan;?></td>
           <td><?php echo $jam_tagihan;?></td>
-          <td><?php echo $total;?></td>
+          <td><?php echo $no_antrean;?></td>
+          <td><?php echo $no_polisi;?></td>
+          <td><?php echo $rincian;?></td>
+          <td><?php echo $total_harga;?></td>
           <td><?php echo $status;?></td>
         </tr>
         <?php endforeach;?>
@@ -45,10 +52,6 @@
 	</div>
 </div>
 
-<!-- <script src="<?php echo base_url().'assets/js/jquery-2.2.4.min.js'?>"></script>
-<script src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
-<script src="<?php echo base_url().'assets/js/jquery.dataTables.min.js'?>"></script>
-<script src="<?php echo base_url().'assets/js/moment.js'?>"></script> -->
 <script>
 	$(document).ready(function(){
 		$('#mydata').DataTable();
