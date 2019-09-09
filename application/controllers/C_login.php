@@ -19,7 +19,7 @@ class C_login extends CI_Controller{
         	$this->session->set_userdata('masuk',TRUE);
 					$this->session->set_userdata('ses_id',$data['id']);
 					$this->session->set_userdata('ses_nama',$data['nama']);
-					redirect('C_admin');
+					redirect('index.php/C_admin');
 				}else{  // jika username dan password tidak ditemukan atau salah
 					$url=base_url();
 					echo $this->session->set_flashdata('msg','Username Atau Password Salah');
