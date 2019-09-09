@@ -13,12 +13,39 @@ class C_customer extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('page_header'); 
+		$this->load->view('page_header_customer'); 
 		$this->load->view('page_index');
     }
     
     public function service()
     {
-        
-    }
+		$this->load->view('page_service_customer');
+        $this->load->view('page_header_customer');
+	}
+	public function add_keluhan()
+	{
+		$no_polisi = $this->input->post('no_polisi');
+		$jenis_keluhan = $this->input->post('jenis_keluhan');
+		$Keterangan = $this->input->post('keterangan');
+		$jam = $this->input->post('jam');
+		$tanggal = $this->input->post('tanggal');
+		$no_antrean = $this->input->post('no_antrean');
+		$id_customer = $this->input->post('id_customer');
+ 
+		$data = array(
+			'no_polisi' => $no_polisi,
+			'jenis_keluhan' => $jenis_keluhan,
+			'keterangan' => $Keterangan,
+			'jam' => $jam,
+			'tanggal' => $tanggal,
+			'no_antrean' => $no_antrean,
+			'id_customer_FK' => $id_customer
+			);
+		$this->M_customer->input_data($data,'keluhan');
+		redirect('index.php/C_customer');
+	}
+	public function antrean()
+	{
+
+	}
 }
