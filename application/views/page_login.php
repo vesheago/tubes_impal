@@ -5,6 +5,12 @@
     <!-- Bootstrap -->
     <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet">
   </head>
+  <style>
+    .container{
+      margin:0 auto;
+      margin-top:160px;
+    }
+  </style>
   <body>
 
     <div class="container">
