@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Sistem Informasi</title>
+  <title>Home</title>
   <!-- <link rel="shortcut icon" href="<?php echo base_url('assets/img/logo.png') ?>"> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,8 +47,8 @@
       <!-- <a class="navbar-brand" href="#"><?php echo $this->data['kampus'] ?></a> -->
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="<?php echo base_url() ?>index.php/C_customer">Home</a></li>
-      <li><a href="<?php echo base_url() ?>index.php/C_customer/service">Service</a></li>
+      <li class="active"><a href="<?php echo base_url() ?>index.php/C_manajer">Home</a></li>
+      <li><a href="<?php echo base_url() ?>index.php/C_manajer/laporan">Laporan</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right text-center">
       <li class="dropdown pull-right">

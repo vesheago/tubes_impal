@@ -13,13 +13,13 @@ class C_admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('page_header'); 
+		$this->load->view('page_header_admin'); 
 		$this->load->view('page_index');
 	}
 
 	public function tagihan(){
 		$x['data']=$this->M_admin->show_tagihan_admin();
-		$this->load->view('page_header');
+		$this->load->view('page_header_admin');
 		$this->load->view('page_tagihan',$x);
 	}
 }

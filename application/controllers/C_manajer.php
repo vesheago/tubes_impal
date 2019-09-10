@@ -12,14 +12,14 @@ class C_manajer extends CI_Controller {
 	}
 
 	public function index()
-	{
-		$this->load->view('page_header_manajer'); 
+	{ 
+		$this->load->view('page_header_manajer');
 		$this->load->view('page_index');
 	}
 
 	public function laporan(){
 		$a['data']=$this->M_manajer->show_tagihan_manajer();
-		$this->load->view('page_header_manager');
+		$this->load->view('page_header_manajer');
 		$this->load->view('page_tagihan',$a);
 	}
 }
