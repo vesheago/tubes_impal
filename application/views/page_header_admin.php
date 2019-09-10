@@ -47,7 +47,7 @@
       <!-- <a class="navbar-brand" href="#"><?php echo $this->data['kampus'] ?></a> -->
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="<?php echo base_url() ?>">Home</a></li>
+      <li class="active"><a href="<?php echo base_url() ?>index.php/C_admin">Home</a></li>
       <li><a href="<?php echo base_url() ?>index.php/C_admin/tagihan">Tagihan</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right text-center">
