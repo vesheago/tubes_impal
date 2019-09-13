@@ -18,8 +18,16 @@ class C_admin extends CI_Controller {
 	}
 
 	public function tagihan(){
-		$x['data']=$this->M_admin->show_tagihan_admin();
+		$array['data']=$this->M_admin->show_tagihan_admin();
 		$this->load->view('page_header_admin');
-		$this->load->view('page_tagihan',$x);
+		$this->load->view('page_tagihan',$array);
+	}
+
+	public function updateTagihan()
+	{
+		$status = $this->input->post('status');
+		$id = $this->input->post('id_tagihan');
+		$this->M_admin->update_tagihan($status,$id);
+		redirect('index.php/C_admin/tagihan');
 	}
 }

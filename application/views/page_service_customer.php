@@ -18,6 +18,10 @@
 				<td><input type="text" name="no_polisi"></td>
 			</tr>
 			<tr>
+				<td>No</td>
+				<td><input type="text" name="no_polisi"></td>
+			</tr>
+			<tr>
 				<td>Jenis Keluhan</td>
 				<td><input type="text" name="jenis_keluhan"></td>
 			</tr>
