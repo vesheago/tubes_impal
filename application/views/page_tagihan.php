@@ -44,7 +44,7 @@
           <td><?php echo $no_antrean;?></td>
           <td><?php echo $no_polisi;?></td>
           <td><?php echo $rincian;?></td>
-          <td><?php echo $total_harga;?></td>
+          <td><?php echo 'Rp '.number_format($total_harga);?></td>
           <td><?php echo $status;?></td>
           <td><a class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_edit<?php echo $id_tagihan;?>"> Edit</a></td>
         </tr>
@@ -54,7 +54,7 @@
 	</div>
 </div>
 
-<!-- ============ MODAL EDIT STATUS =============== -->
+<!-- ============ MODAL UPDATE TAGIHAN =============== -->
 <?php 
         foreach($data->result_array() as $i):
           $id_tagihan=$i['id_tagihan'];
