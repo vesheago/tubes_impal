@@ -39,11 +39,10 @@ class C_login extends CI_Controller{
 					echo $this->session->set_flashdata('msg','Username Atau Password Salah');
 					redirect($url);
 				}
-
+			}	
     function logout(){
         $this->session->sess_destroy();
         $url = base_url('');
         redirect($url);
     }
-	}
 }
