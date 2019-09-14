@@ -23,4 +23,10 @@ class M_admin extends CI_Model {
 		$hasil=$this->db->query("UPDATE tagihan SET status='$status' WHERE id_tagihan='$id_tagihan'");
 		return $hasil;
 	}
+
+	function insert_Service($id_customer,$total){
+		// $this->db->insert('service',$data);
+		$hasil=$this->db->query("INSERT INTO service ('id_customer','total') VALUES ('$id_customer','$total')");
+		return $hasil;
+	}
 }

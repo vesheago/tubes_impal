@@ -14,15 +14,15 @@
     <table class="table table-bordered table-striped" id="mydata">
       <thead>
         <tr>
-          <td>ID Tagihan</td>
-          <td>Tanggal Tagihan</td>
-          <td>Jam Tagihan</td>
-          <td>No Antrean</td>
-          <td>No Polisi</td>
-          <td>Rincian</td>
-          <td>Total Harga</td>
-          <td>Status</td>
-          <td>Aksi</td>
+          <th>ID Tagihan</th>
+          <th>Tanggal Tagihan</th>
+          <th>Jam Tagihan</th>
+          <th>No Antrean</th>
+          <th>No Polisi</th>
+          <th>Rincian</th>
+          <th>Total Harga</th>
+          <th>Status</th>
+          <th>Update</th>
         </tr>
       </thead>
       <tbody>
@@ -46,7 +46,9 @@
           <td><?php echo $rincian;?></td>
           <td><?php echo 'Rp '.number_format($total_harga);?></td>
           <td><?php echo $status;?></td>
-          <td><a class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_edit<?php echo $id_tagihan;?>"> Edit</a></td>
+          <!--BUTTON UPDATE TAGIHAN -->
+          <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal_edit<?php echo $id_tagihan;?>"><i class="fas fa-user-edit"></i></button></td>
+          <!-- <td><a class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_edit<?php echo $id_tagihan;?>"> Edit</a></td> -->
         </tr>
         <?php endforeach;?>
       </tbody>

@@ -49,6 +49,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo base_url() ?>index.php/C_admin">Home</a></li>
       <li><a href="<?php echo base_url() ?>index.php/C_admin/tagihan">Tagihan</a></li>
+      <li><a href="<?php echo base_url() ?>index.php/C_admin/kelolaService">Kelola Service</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right text-center">
       <li class="dropdown pull-right">
