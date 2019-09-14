@@ -12,7 +12,7 @@ class M_customer extends CI_Model {
 	}
 
 	function GetJenisKeluhan(){
-		$query = $this->db->query('SELECT * FROM tb_keluhan');
+		$query = $this->db->query('SELECT * FROM keluhan');
         return $query->result();
 	}
 
