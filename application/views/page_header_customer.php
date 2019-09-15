@@ -44,7 +44,7 @@
 <nav class="navbar navbar-red navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <!-- <a class="navbar-brand" href="#"><?php echo $this->data['kampus'] ?></a> -->
+      <a class="navbar-brand" href="<?php echo base_url() ?>index.php/C_customer">Bengkelku</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo base_url() ?>index.php/C_customer">Home</a></li>
