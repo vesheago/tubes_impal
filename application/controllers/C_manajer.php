@@ -18,8 +18,8 @@ class C_manajer extends CI_Controller {
 	}
 
 	public function laporan(){
-		$a['data']=$this->M_manajer->show_tagihan_manajer();
+		// $a['data']=$this->M_manajer->show_tagihan_manajer();
 		$this->load->view('page_header_manajer');
-		$this->load->view('page_laporan',$a);
+		$this->load->view('page_laporan');
 	}
 }
