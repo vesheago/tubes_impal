@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home</title>
   <!-- <link rel="shortcut icon" href="<?php echo base_url('assets/img/logo.png') ?>"> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,6 +43,7 @@
 <nav class="navbar navbar-red navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
+      <!-- <a class="navbar-brand"><img class="image" border="0" src="<?php echo base_url('assets/img/logo1.png') ?>" width="45px" style="margin: 1px;padding: 0px color:white;"></a> -->
       <a class="navbar-brand" href="<?php echo base_url() ?>index.php/C_manajer">Bengkelku</a>
     </div>
     <ul class="nav navbar-nav">

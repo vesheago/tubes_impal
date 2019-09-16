@@ -22,4 +22,9 @@ class C_manajer extends CI_Controller {
 		$this->load->view('page_header_manajer');
 		$this->load->view('page_laporan');
 	}
+
+	function lap_data_service(){
+		$a['data']=$this->M_manajer->get_data_service();
+		$this->load->view('page_lap_service',$a);
+	}
 }
