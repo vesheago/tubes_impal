@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Sep 2019 pada 14.58
+-- Waktu pembuatan: 18 Sep 2019 pada 19.49
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.2.12
 
@@ -124,8 +124,7 @@ INSERT INTO `manajer` (`id_manajer`, `nama_manajer`, `email_manajer`, `password`
 
 CREATE TABLE `tagihan` (
   `id_tagihan` char(5) NOT NULL,
-  `tgl_tagihan` varchar(50) NOT NULL,
-  `jam_tagihan` varchar(10) NOT NULL,
+  `tgl_tagihan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `no_antrean` char(4) NOT NULL,
   `no_polisi` varchar(20) NOT NULL,
   `rincian` text NOT NULL,
@@ -139,10 +138,10 @@ CREATE TABLE `tagihan` (
 -- Dumping data untuk tabel `tagihan`
 --
 
-INSERT INTO `tagihan` (`id_tagihan`, `tgl_tagihan`, `jam_tagihan`, `no_antrean`, `no_polisi`, `rincian`, `total_harga`, `status`, `id_customer_FK`, `id_admin_FK`) VALUES
-('TA001', '10 Oktober 2019', '14:30', 'A015', 'AD011D', 'Pengecekan masalah', 100000, 'Lunas', 'CU001', 'AD001'),
-('TA002', '19 Juli 2019', '11:30', 'A021', 'D1747AFR', 'Pengecekan masalah, Ganti oli transmisi', 250000, 'Lunas', 'CU002', 'AD002'),
-('TA003', '2 Agustus 2019', '15:00', 'A033', 'DS1634AA', 'Pengecekan masalah AC mobil', 100000, 'Belum Lunas', 'CU003', 'AD003');
+INSERT INTO `tagihan` (`id_tagihan`, `tgl_tagihan`, `no_antrean`, `no_polisi`, `rincian`, `total_harga`, `status`, `id_customer_FK`, `id_admin_FK`) VALUES
+('TA001', '2018-10-10 07:30:13', 'A015', 'AD011D', 'Pengecekan masalah', 100000, 'Lunas', 'CU001', 'AD001'),
+('TA002', '2018-10-19 04:33:11', 'A021', 'D1747AFR', 'Pengecekan masalah, Ganti oli transmisi', 250000, 'Lunas', 'CU002', 'AD002'),
+('TA003', '2019-08-02 08:00:25', 'A033', 'DS1634AA', 'Pengecekan masalah AC mobil', 100000, 'Belum Lunas', 'CU003', 'AD003');
 
 --
 -- Indexes for dumped tables
