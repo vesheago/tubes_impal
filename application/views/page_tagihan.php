@@ -16,7 +16,6 @@
         <tr>
           <th>ID Tagihan</th>
           <th>Tanggal Tagihan</th>
-          <th>Jam Tagihan</th>
           <th>No Antrean</th>
           <th>No Polisi</th>
           <th>Rincian</th>
@@ -30,7 +29,6 @@
           foreach($data->result_array() as $i):
             $id_tagihan=$i['id_tagihan'];
             $tgl_tagihan=$i['tgl_tagihan'];
-            $jam_tagihan=$i['jam_tagihan'];
             $no_antrean=$i['no_antrean'];
             $no_polisi=$i['no_polisi'];
             $rincian=$i['rincian'];
@@ -40,7 +38,6 @@
         <tr>
           <td><?php echo $id_tagihan;?></td>
           <td><?php echo $tgl_tagihan;?></td>
-          <td><?php echo $jam_tagihan;?></td>
           <td><?php echo $no_antrean;?></td>
           <td><?php echo $no_polisi;?></td>
           <td><?php echo $rincian;?></td>
@@ -61,7 +58,6 @@
         foreach($data->result_array() as $i):
           $id_tagihan=$i['id_tagihan'];
           $tgl_tagihan=$i['tgl_tagihan'];
-          $jam_tagihan=$i['jam_tagihan'];
           $no_antrean=$i['no_antrean'];
           $no_polisi=$i['no_polisi'];
           $rincian=$i['rincian'];
@@ -87,12 +83,6 @@
                         <label class="control-label col-xs-3" >Tanggal</label>
                         <div class="col-xs-8">
                             <input name="tgl_tagihan" value="<?php echo $tgl_tagihan;?>" class="form-control" type="text" placeholder="Tanggal..." readonly>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >Jam</label>
-                        <div class="col-xs-8">
-                            <input name="jam_tagihan" value="<?php echo $jam_tagihan;?>" class="form-control" type="text" placeholder="Jam..." readonly>
                         </div>
                     </div>
                     <div class="form-group">

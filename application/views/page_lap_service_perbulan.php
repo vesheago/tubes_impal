@@ -1,6 +1,6 @@
 <html lang="en" moznomarginboxes mozdisallowselectionprint>
 <head>
-    <title>Laporan Data Service</title>
+    <title>Laporan Service Per Bulan</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css')?>"/>
 </head>
@@ -24,9 +24,14 @@
                 <th style="text-align:left"></th>
             </tr>
     </table>
-
+    <?php 
+        $b=$jml->row_array();
+    ?>
     <table border="1" align="center" style="width:900px;margin-bottom:20px;">
     <thead>
+        <tr>
+            <th colspan="11" style="text-align:left;">Bulan : <?php echo $b['bulan'];?></th>
+        </tr>
         <tr>
             <th style="width:50px;">No</th>
             <th>ID Tagihan</th>
@@ -61,9 +66,6 @@
     <?php }?>
     </tbody>
     <tfoot>
-    <?php 
-        $b=$jml->row_array();
-    ?>
         <tr>
             <td colspan="6" style="text-align:center;"><b>Total</b></td>
             <td style="text-align:right;"><b><?php echo 'Rp '.number_format($b['total']);?></b></td>

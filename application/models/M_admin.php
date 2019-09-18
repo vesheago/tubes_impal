@@ -15,7 +15,7 @@ class M_admin extends CI_Model {
 	}
 
 	public function show_tagihan_admin(){ //menampilkan daftar tagihan
-		$hasil=$this->db->query("SELECT id_tagihan, tgl_tagihan, jam_tagihan, no_antrean, no_polisi, rincian, total_harga, status FROM tagihan");
+		$hasil=$this->db->query("SELECT id_tagihan, tgl_tagihan, no_antrean, no_polisi, rincian, total_harga, status FROM tagihan");
 		return $hasil;
 	}
 
