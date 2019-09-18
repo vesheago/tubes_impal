@@ -11,9 +11,9 @@ class M_customer extends CI_Model {
 		$this->db->insert($table,$data);
 	}
 
-	function GetJenisKeluhan(){
-		$query = $this->db->query('SELECT * FROM keluhan');
-        return $query->result();
-	}
+	// function GetJenisKeluhan(){
+	// 	$query = $this->db->query('SELECT * FROM keluhan');
+    //     return $query->result();
+	// }
 
 }
