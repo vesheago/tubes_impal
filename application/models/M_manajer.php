@@ -8,12 +8,17 @@ class M_manajer extends CI_Model {
 	}
 
 	public function show_tagihan_manajer(){ //menampilkan daftar tagihan
-		$hasil=$this->db->query("SELECT id_tagihan, tgl_tagihan, jam_tagihan, no_antrean, no_polisi, rincian, total_harga, status FROM tagihan");
+		$hasil=$this->db->query("SELECT id_tagihan, tgl_tagihan, jam_tagihan, no_polisi, rincian, total_harga, status FROM tagihan");
 		return $hasil;
 	}
 
 	function get_data_service(){
-		$hasil=$this->db->query("SELECT id_tagihan, tgl_tagihan, jam_tagihan, no_antrean, no_polisi, rincian, total_harga, status FROM tagihan");
+		$hasil=$this->db->query("SELECT id_tagihan, tgl_tagihan, jam_tagihan, no_polisi, rincian, total_harga, status FROM tagihan");
+		return $hasil;
+	}
+
+	function get_total_service(){
+		$hasil=$this->db->query("SELECT id_tagihan, tgl_tagihan, jam_tagihan, no_polisi, rincian, sum(total_harga) as total, status FROM tagihan");
 		return $hasil;
 	}
 }

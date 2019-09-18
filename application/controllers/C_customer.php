@@ -44,7 +44,7 @@ class C_customer extends CI_Controller {
 			'id_customer_FK' => $id_customer
 			);
 		$this->M_customer->input_data($data,'keluhan');
-		redirect('index.php/C_customer');
+		redirect('c_customer');
 	}
 
 	public function antrean()

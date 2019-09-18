@@ -75,7 +75,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 <h3 class="modal-title" id="myModalLabel">Update Tagihan</h3>
             </div>
-            <form class="form-horizontal" method="post" action="<?php echo base_url()?>index.php/C_admin/updateTagihan">
+            <form class="form-horizontal" method="post" action="<?php echo base_url().'c_admin/updateTagihan'?>">
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="control-label col-xs-3" >ID Tagihan</label>

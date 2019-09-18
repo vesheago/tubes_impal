@@ -21,19 +21,19 @@ class C_login extends CI_Controller{
         			$this->session->set_userdata('masuk',TRUE);
 					$this->session->set_userdata('ses_id',$data['id_admin']);
 					$this->session->set_userdata('ses_nama',$data['nama_admin']);
-					redirect('index.php/C_admin');
+					redirect('c_admin');
 				}else if($cek_customer->num_rows() > 0){
 					$data=$cek_customer->row_array();
         			$this->session->set_userdata('masuk',TRUE);
 					$this->session->set_userdata('ses_id',$data['id_customer']);
 					$this->session->set_userdata('ses_nama',$data['nama_customer']);
-					redirect('index.php/C_customer');
+					redirect('c_customer');
 				}else if($cek_manajer->num_rows() > 0){
 					$data=$cek_manajer->row_array();
         			$this->session->set_userdata('masuk',TRUE);
 					$this->session->set_userdata('ses_id',$data['id_manajer']);
 					$this->session->set_userdata('ses_nama',$data['nama_manajer']);
-					redirect('index.php/C_manajer');
+					redirect('c_manajer');
 				}else{  // jika username dan password tidak ditemukan atau salah
 					$url=base_url();
 					echo $this->session->set_flashdata('msg','Username Atau Password Salah');

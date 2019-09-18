@@ -11,7 +11,7 @@
 <div class="container">
   <div class="box">
     <h1 class="text-center">Form Keluhan</h1>
-	<form action="<?php echo base_url() ?>index.php/C_customer/add_keluhan" method="post">
+	<form action="<?php echo base_url().'c_customer/add_keluhan'?>" method="post">
 		<table style="margin:20px auto;">
 			<tr>
 				<td>No Polisi</td>

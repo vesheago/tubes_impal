@@ -25,6 +25,7 @@ class C_manajer extends CI_Controller {
 
 	function lap_data_service(){
 		$a['data']=$this->M_manajer->get_data_service();
+		$a['jml']=$this->M_manajer->get_total_service();
 		$this->load->view('page_lap_service',$a);
 	}
 }

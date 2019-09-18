@@ -15,7 +15,7 @@
 
     <div class="container">
         <div class="col-md-4 col-md-offset-4">
-          <form class="form-signin" action="<?php echo base_url().'index.php/C_login/auth'?>" method="post">
+          <form class="form-signin" action="<?php echo base_url().'c_login/auth'?>" method="post">
             <h2 class="form-signin-heading">Please sign in</h2>
             <?php echo $this->session->flashdata('msg');?>
             <label for="username" class="sr-only">Username</label>

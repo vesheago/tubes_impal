@@ -51,7 +51,7 @@
                             <td style="text-align:center;vertical-align:middle">1</td>
                             <td style="vertical-align:middle;">Laporan Data Service</td>
                             <td style="text-align:center;">
-                                <a class="btn btn-sm btn-default" href="<?php echo base_url()?>index.php/C_manajer/lap_data_service" target="_blank"><span class="fa fa-print"></span> Print</a>
+                                <a class="btn btn-sm btn-default" href="<?php echo base_url().'c_manajer/lap_data_service'?>" target="_blank"><span class="fa fa-print"></span> Print</a>
                             </td>
                         </tr>
                     </tbody>

@@ -28,7 +28,7 @@ class C_admin extends CI_Controller {
 		$status = $this->input->post('status');
 		$id = $this->input->post('id_tagihan');
 		$this->M_admin->update_tagihan($status,$id);
-		redirect('index.php/C_admin/tagihan');
+		redirect('c_admin/tagihan');
 	}
 
 	// public function kelolaService()

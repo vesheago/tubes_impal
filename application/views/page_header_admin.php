@@ -44,12 +44,12 @@
 <nav class="navbar navbar-red navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="<?php echo base_url() ?>index.php/C_admin">Bengkelku</a>
+      <a class="navbar-brand" href="<?php echo base_url().'c_admin'?>">Bengkelku</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="<?php echo base_url() ?>index.php/C_admin">Home</a></li>
-      <li><a href="<?php echo base_url() ?>index.php/C_admin/tagihan">Tagihan</a></li>
-      <li><a href="<?php echo base_url() ?>index.php/C_admin/kelolaService">Kelola Service</a></li>
+      <li class="active"><a href="<?php echo base_url().'c_admin'?>">Home</a></li>
+      <li><a href="<?php echo base_url().'c_admin/tagihan'?>">Tagihan</a></li>
+      <li><a href="<?php echo base_url().'c_admin/kelolaService'?>">Kelola Service</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right text-center">
       <li class="dropdown pull-right">
@@ -58,7 +58,7 @@
         <ul class="dropdown-menu">
           <li><a href="#"><?php echo $this->session->userdata('ses_id'); ?></a></li>
           <li><a href="#"><?php echo $this->session->userdata('ses_nama'); ?></a></li>
-          <li><a href="<?php echo base_url().'index.php/C_login/logout'?>">Sign Out</a></li>
+          <li><a href="<?php echo base_url().'c_login/logout'?>">Sign Out</a></li>
         </ul>
       </li>
     </ul>

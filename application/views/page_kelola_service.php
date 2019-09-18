@@ -17,7 +17,7 @@
                     <input name="id_tagihan" value="<?php echo $id_tagihan;?>" class="form-control" type="text" placeholder="ID Tagihan..." readonly>
                 </div>
         </div>
-        <form class="form-horizontal" method="post" action="<?php echo base_url()?>index.php/C_admin/kelolaService">
+        <form class="form-horizontal" method="post" action="<?php echo base_url().'c_admin/kelolaService'?>">
             <div class="form-group">
                 <label class="control-label col-xs-3" >Service Umum</label>
                     <div class="col-xs-8">

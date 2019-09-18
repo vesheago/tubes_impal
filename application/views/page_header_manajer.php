@@ -44,11 +44,11 @@
   <div class="container">
     <div class="navbar-header">
       <!-- <a class="navbar-brand"><img class="image" border="0" src="<?php echo base_url('assets/img/logo1.png') ?>" width="45px" style="margin: 1px;padding: 0px color:white;"></a> -->
-      <a class="navbar-brand" href="<?php echo base_url() ?>index.php/C_manajer">Bengkelku</a>
+      <a class="navbar-brand" href="<?php echo base_url().'c_manajer'?>">Bengkelku</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="<?php echo base_url() ?>index.php/C_manajer">Home</a></li>
-      <li><a href="<?php echo base_url() ?>index.php/C_manajer/laporan">Laporan</a></li>
+      <li class="active"><a href="<?php echo base_url().'c_manajer'?>">Home</a></li>
+      <li><a href="<?php echo base_url(),'c_manajer/laporan'?>">Laporan</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right text-center">
       <li class="dropdown pull-right">
@@ -57,7 +57,7 @@
         <ul class="dropdown-menu">
           <li><a href="#"><?php echo $this->session->userdata('ses_id'); ?></a></li>
           <li><a href="#"><?php echo $this->session->userdata('ses_nama'); ?></a></li>
-          <li><a href="<?php echo base_url().'index.php/C_login/logout'?>">Sign Out</a></li>
+          <li><a href="<?php echo base_url().'c_login/logout'?>">Sign Out</a></li>
         </ul>
       </li>
     </ul>
