@@ -19,8 +19,8 @@ class C_customer extends CI_Controller {
     
     public function service()
     {
-		// $data['dd_jenis'] = $this->M_customer->GetJenisKeluhan();
-		$this->load->view('page_header_customer',$data);
+		//$data['dd_jenis'] = $this->M_customer->GetJenisKeluhan();
+		$this->load->view('page_header_customer');
 		$this->load->view('page_service_customer');
         // $this->load->view('page_header_customer');
 	}
