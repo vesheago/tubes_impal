@@ -36,7 +36,7 @@
           <td><?php echo 'Rp '.number_format($total_harga);?></td>
           <td><?php echo $status;?></td>
           <!--BUTTON VIEW TAGIHAN -->
-          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_view<?php echo $id_customer_FK;?>"><i class="fas fa-eye"></i></button></td>
+          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_view<?php echo $id_customer_FK;?>"><i class="far fa-eye"></i></button></td>
         </tr>
         <?php endforeach;?>
       </tbody>
