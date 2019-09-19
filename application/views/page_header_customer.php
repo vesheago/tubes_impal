@@ -49,6 +49,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo base_url().'c_customer'?>">Home</a></li>
       <li><a href="<?php echo base_url().'c_customer/service'?>">Service</a></li>
+      <li><a href="<?php echo base_url().'c_customer/tagihan_customer'?>">Tagihan</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right text-center">
       <li class="dropdown pull-right">
