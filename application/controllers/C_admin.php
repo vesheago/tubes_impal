@@ -31,6 +31,11 @@ class C_admin extends CI_Controller {
 		redirect('c_admin/tagihan');
 	}
 
+	public function kelolaService(){
+		$this->load->view('page_header_admin'); 
+		$this->load->view('page_kelola_service');
+	}
+
 	// public function kelolaService()
 	// {
 	// 	$id_customer = $this->input->post('id_customer');

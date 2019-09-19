@@ -1,39 +1,57 @@
-<!DOCTYPE html>
-<html lang="id">
+<!doctype HTML>
 <head>
-	<meta charset="utf-8">
-	<title>Tagihan</title>
-  <br>
-  <br>
+<title>Menghitung nilai di checbox otomatis</title>
 </head>
-<body>
-
-<div class="container">
-    <div class="box">
-        <h1 class="text-center">Daftar Tagihan</h1>
-        <div class="form-group">
-            <label class="control-label col-xs-3" >ID Tagihan</label>
-                <div class="col-xs-8">
-                    <input name="id_tagihan" value="<?php echo $id_tagihan;?>" class="form-control" type="text" placeholder="ID Tagihan..." readonly>
-                </div>
-        </div>
-        <form class="form-horizontal" method="post" action="<?php echo base_url().'c_admin/kelolaService'?>">
-            <div class="form-group">
-                <label class="control-label col-xs-3" >Service Umum</label>
-                    <div class="col-xs-8">
-                        <input type="checkbox" name="service[]" value="720000">Ganti Aki
-                        <input type="checkbox" name="service[]" value="860000">Ganti Oli Mesin
-                    </div>
-            </div>
-        </form>
-	</div>
-</div>
-    <!--END MODAL UPDATE TAGIHAN-->
-
-<script>
-	$(document).ready(function(){
-		$('#mydata').DataTable();
-	});
+<script language="JavaScript">
+    function checkChoice(whichbox){
+        with (whichbox.form){
+            if (whichbox.checked == false)
+                hiddentotal.value = eval(hiddentotal.value) - eval(whichbox.value);
+            else
+                hiddentotal.value = eval(hiddentotal.value) + eval(whichbox.value);
+                return(formatCurrency(hiddentotal.value));
+        }
+    }
+    function formatCurrency(num){
+    num = num.toString().replace(/\$|\,/g,'');
+    if(isNaN(num)) num = "0";
+    cents = Math.floor((num*100+0.5)%100);
+    num = Math.floor((num*100+0.5)/100).toString();
+    if(cents < 10) cents = "0" + cents;
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+    num = num.substring(0,num.length-(4*i+3))+'.'+num.substring(num.length-(4*i+3));
+    return ("Rp. " + num + "," + cents);
+    }
 </script>
+<body>
+<div class="container">
+  <div class="box">
+<center>
+<form name=myform><table width="335" border="0">
+  <tr>
+    <td colspan="6" align="center"><strong>Service Umum</strong></td>
+    </tr>
+  <tr>
+    <td width="156">Ganti Aki</td>
+    <td width="29">Rp. </td>
+    <td width="99" align="right">720.000</td>
+    <td width="33" align="center"><input type=checkbox name=nasi value="720000" onClick="this.form.total.value=checkChoice(this);"></td>
+  </tr>
+  <tr>
+    <td>Ganti Oli Mesin</td>
+    <td>Rp.</td>
+    <td align="right">860.000</td>
+    <td align="center"><input type=checkbox name=ikan value="860000" onClick="this.form.total.value=checkChoice(this);"></td>
+  </tr>
+  <tr>
+    <td colspan="4" align="right">Total :
+      <input type="text" name="total" value=""  readonly>
+      <input type=hidden name=hiddentotal value=0></td>
+  </tr>
+</table>
+</form>
+</center>
+</div>
+</div>
 </body>
 </html>
