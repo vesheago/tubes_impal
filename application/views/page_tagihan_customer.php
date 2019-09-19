@@ -35,9 +35,8 @@
           <td><?php echo $tgl_tagihan;?></td>
           <td><?php echo 'Rp '.number_format($total_harga);?></td>
           <td><?php echo $status;?></td>
-          <!--BUTTON UPDATE TAGIHAN -->
-          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_edit<?php echo $id_customer_FK;?>"><i class="fas fa-eye"></i></button></td>
-          <!-- <td><a class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_edit<?php echo $id_tagihan;?>"> Edit</a></td> -->
+          <!--BUTTON VIEW TAGIHAN -->
+          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_view<?php echo $id_customer_FK;?>"><i class="fas fa-eye"></i></button></td>
         </tr>
         <?php endforeach;?>
       </tbody>
@@ -45,7 +44,7 @@
 	</div>
 </div>
 
-<!-- ============ MODAL UPDATE TAGIHAN =============== -->
+<!-- ============ MODAL VIEW TAGIHAN =============== -->
 <?php 
         foreach($data->result_array() as $i):
           $id_tagihan=$i['id_tagihan'];
@@ -56,7 +55,7 @@
           $total_harga=$i['total_harga'];
           $status=$i['status'];
         ?>
-        <div class="modal fade" id="modal_edit<?php echo $id_customer_FK;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal fade" id="modal_view<?php echo $id_customer_FK;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
