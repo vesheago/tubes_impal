@@ -22,8 +22,8 @@ class C_customer extends CI_Controller {
 		//$data['dd_jenis'] = $this->M_customer->GetJenisKeluhan();
 		$this->load->view('page_header_customer');
 		$this->load->view('page_service_customer');
-        // $this->load->view('page_header_customer');
 	}
+	
 	public function add_keluhan()
 	{
 		$no_polisi = $this->input->post('no_polisi');
@@ -50,5 +50,12 @@ class C_customer extends CI_Controller {
 	public function antrean()
 	{
 
+	}
+
+	public function tagihan_customer(){
+		$id_customer=$this->session->userdata('ses_id');
+		$array['data']=$this->M_customer->show_tagihan_customer($id_customer);
+		$this->load->view('page_header_customer');
+		$this->load->view('page_tagihan_customer',$array);
 	}
 }

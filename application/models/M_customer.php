@@ -16,4 +16,9 @@ class M_customer extends CI_Model {
     //     return $query->result();
 	// }
 
+	function show_tagihan_customer($id_customer){ //menampilkan daftar tagihan
+		$hasil=$this->db->query("SELECT id_customer_FK, id_tagihan, tgl_tagihan, no_antrean, no_polisi, rincian, total_harga, status FROM tagihan WHERE id_customer_FK='$id_customer'");
+		return $hasil;
+	}
+
 }
