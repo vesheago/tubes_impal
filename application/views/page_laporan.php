@@ -81,7 +81,6 @@
                 </div>
                 <form class="form-horizontal" method="post" action="<?php echo base_url().'c_manajer/lap_service_perbulan'?>" target="_blank">
                     <div class="modal-body">
-
                         <div class="form-group">
                             <label class="control-label col-xs-3" >Bulan</label>
                             <div class="col-xs-9">
@@ -94,8 +93,6 @@
                                     </select>
                             </div>
                         </div>
-                            
-
                     </div>
 
                     <div class="modal-footer">

@@ -21,12 +21,12 @@ class C_manajer extends CI_Controller {
 		$data['service_bln']=$this->M_manajer->get_bulan_service();
 		// $data['jual_thn']=$this->m_laporan->get_tahun_jual();
 		$this->load->view('page_laporan',$data);
-	}
+	} 
 
 	function lap_data_service(){
 		$a['data']=$this->M_manajer->get_data_service();
 		$a['jml']=$this->M_manajer->get_total_service();
-		$this->load->view('page_lap_service',$a);
+		$this->load->view('page_lap_service',$a); 
 	}
 
 	function lap_service_perbulan(){

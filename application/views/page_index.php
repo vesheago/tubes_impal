@@ -6,7 +6,7 @@
   <body>
     <div class="container" style="margin-top: 50px">
       <br>
-      <h2 class="text-center">MONTIR PROFESIONAL SIAP MELAYANI ANDA</h2>
+      <h2 class="text-center">SELAMAT DATANG DI BENGKELKU</h2>
       <br>
       <div class="col-md-10 col-md-offset-1">
 		    <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -64,6 +64,7 @@
         <div class="row">
           <div class="col-xs-12">
             <p class="cars">
+              <h2 class="text-center">MONTIR PROFESIONAL SIAP MELAYANI ANDA</h2>
               <b>MELAYANI</b>
               :
               <br />

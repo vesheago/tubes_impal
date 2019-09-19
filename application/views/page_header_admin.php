@@ -40,7 +40,7 @@
 	}
   </style>
 </head>
-<body>
+<body> 
 <nav class="navbar navbar-red navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
