@@ -23,11 +23,14 @@ class M_manajer extends CI_Model {
 	}
 
 	function get_service_perbulan($bulan){
-		$hasil=$this->db->query("SELECT id_tagihan, DATE_FORMAT(tgl_tagihan,'%M %Y') AS bulan, DATE_FORMAT(tgl_tagihan,'%d %M %Y') AS tgl_tagihan,  no_polisi, rincian, total_harga, status FROM tagihan WHERE DATE_FORMAT(tgl_tagihan,'%M %Y')='$bulan'");
+		$hasil=$this->db->query("SELECT id_tagihan,DATE_FORMAT(tgl_tagihan,'%M %Y') AS bulan, DATE_FORMAT(tgl_tagihan,'%d %M %Y') AS tgl_tagihan,no_polisi,rincian,total_harga 
+		FROM tagihan WHERE DATE_FORMAT(tgl_tagihan,'%M %Y')='$bulan' ORDER BY id_tagihan DESC");
 		return $hasil;
 	}
 	function get_total_service_perbulan($bulan){
-		$hasil=$this->db->query("SELECT id_tagihan, DATE_FORMAT(tgl_tagihan,'%M %Y') AS bulan, DATE_FORMAT(tgl_tagihan,'%d %M %Y') AS tgl_tagihan,  no_polisi, rincian, sum(total_harga) as total, status FROM tagihan WHERE DATE_FORMAT(tgl_tagihan,'%M %Y')='$bulan'");
+		$hasil=$this->db->query("SELECT id_tagihan,DATE_FORMAT(tgl_tagihan,'%M %Y') AS bulan,DATE_FORMAT(tgl_tagihan,'%d %M %Y') AS tgl_tagihan,no_polisi,rincian,sum(total_harga) 
+		as total FROM tagihan 
+		WHERE DATE_FORMAT(tgl_tagihan,'%M %Y')='$bulan' ORDER BY id_tagihan DESC");
 		return $hasil;
 	}
 }
