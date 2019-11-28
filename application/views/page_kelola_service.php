@@ -1,6 +1,6 @@
 <!doctype HTML>
 <head>
-<title>Menghitung nilai di checbox otomatis</title>
+<title>Kelola Service</title>
 </head>
 <script language="JavaScript">
     function checkChoice(whichbox){
